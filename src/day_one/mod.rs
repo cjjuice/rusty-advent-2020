@@ -1,14 +1,11 @@
-use std::fs;
-
 pub fn run() {
-    let input: String = fs::read_to_string("inputs/1.txt")
-            .expect("Something went wrong reading the file");
+    let input = include_str!("../inputs/1.txt");
 
-    two_numbers(&input);
-    three_numbers(&input);
+    two_numbers(input);
+    three_numbers(input);
 }
 
-fn two_numbers(content: &str) {
+fn two_numbers(content: &'static str) {
     'outer: for line1 in content.lines() {
         for line2 in content.lines() {
             let line1_int: i32 = line1.parse().unwrap();
@@ -25,7 +22,7 @@ fn two_numbers(content: &str) {
    }
 }
 
-fn three_numbers(content: &str) {
+fn three_numbers(content: &'static str) {
     'outer: for line1 in content.lines() {
         for line2 in content.lines() {
             for line3 in content.lines() {
