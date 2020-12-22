@@ -1,5 +1,6 @@
 mod day_one;
 mod day_two;
+mod day_three;
 
 use text_io::read;
 
@@ -10,6 +11,7 @@ fn main() {
     match day {
         1 => day_one::run(),
         2 => day_two::run(),
+        3 => day_three::run(),
         _ => panic!("{} is not a valid day!", day)
     }
 }
